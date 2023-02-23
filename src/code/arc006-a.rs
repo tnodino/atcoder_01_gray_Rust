@@ -21,13 +21,12 @@ fn main() {
     if L.contains(&B) {
         bonus = true;
     }
-    let ans = match hit {
+    println!("{}", match hit {
         6 => 1,
         5 if bonus => 2,
         5 => 3,
         4 => 4,
         3 => 5,
         _ => 0
-    };
-    println!("{}", ans);
+    });
 }

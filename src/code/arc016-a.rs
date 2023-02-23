@@ -10,9 +10,8 @@ fn main() {
         N: usize,
         M: usize,
     }
-    let mut ans = 1;
-    if M == 1 {
-        ans = N;
-    }
-    println!("{}", ans);
+    println!("{}", match M {
+        1 => N,
+        _ => 1,
+    });
 }

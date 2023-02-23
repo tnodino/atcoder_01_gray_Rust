@@ -9,10 +9,8 @@ fn main() {
     input! {
         A: String,
     }
-    if A == "a" {
-        println!("-1");
-    }
-    else {
-        println!("a");
-    }
+    println!("{}", match A.as_str() {
+        "a" => "-1",
+        _ => "a",
+    });
 }

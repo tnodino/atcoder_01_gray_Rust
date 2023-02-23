@@ -10,12 +10,10 @@ fn main() {
         A: String,
         B: String,
     }
-    let ans;
     if A.len() > B.len() {
-        ans = A;
+        println!("{}", A);
     }
     else {
-        ans = B;
+        println!("{}", B);
     }
-    println!("{}", ans);
 }

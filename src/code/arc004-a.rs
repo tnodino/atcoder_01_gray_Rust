@@ -18,7 +18,7 @@ fn main() {
         }
         Points.push((x, y));
     }
-    let mut ans = 0.0;
+    let mut ans = 0.;
     for i in 0..N {
         for j in 0..N {
             let distance = hypot((Points[i].0 - Points[j].0).abs(), (Points[i].1 - Points[j].1).abs());

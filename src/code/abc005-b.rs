@@ -2,6 +2,7 @@
 
 use proconio::input;
 use proconio::fastout;
+use std::cmp::min;
 
 #[fastout]
 #[allow(non_snake_case)]
@@ -14,7 +15,7 @@ fn main() {
         input! {
             T: usize,
         }
-        ans = ans.min(T);
+        ans = min(ans, T);
     }
     println!("{}", ans);
 }

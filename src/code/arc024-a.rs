@@ -2,6 +2,7 @@
 
 use proconio::input;
 use proconio::fastout;
+use std::cmp::min;
 
 #[fastout]
 #[allow(non_snake_case)]
@@ -22,7 +23,7 @@ fn main() {
     }
     let mut ans = 0;
     for i in 0..50 {
-        ans += cntl[i].min(cntr[i]);
+        ans += min(cntl[i], cntr[i]);
     }
     println!("{}", ans);
 }

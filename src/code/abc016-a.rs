@@ -10,12 +10,8 @@ fn main() {
         M: usize,
         D: usize,
     }
-    let ans;
-    if M % D == 0 {
-        ans = "YES";
-    }
-    else {
-        ans = "NO";
-    }
-    println!("{}", ans);
+    println!("{}", match M % D {
+        0 => "YES",
+        _ => "NO",
+    });
 }

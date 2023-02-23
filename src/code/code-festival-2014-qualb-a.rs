@@ -2,6 +2,7 @@
 
 use proconio::input;
 use proconio::fastout;
+use std::cmp::max;
 
 #[fastout]
 #[allow(non_snake_case)]
@@ -10,5 +11,5 @@ fn main() {
         A: usize,
         B: usize,
     }
-    println!("{}", A.max(B));
+    println!("{}", max(A, B));
 }

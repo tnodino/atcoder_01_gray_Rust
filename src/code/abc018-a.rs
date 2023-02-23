@@ -2,19 +2,17 @@
 
 use proconio::input;
 use proconio::fastout;
+use std::cmp::max;
+use std::cmp::min;
 
 fn rank(x: usize, ma: usize, mi: usize) -> usize {
-    let ret;
     if x == ma {
-        ret = 1;
+        return 1;
     }
-    else if x == mi {
-        ret = 3;
+    if x == mi {
+        return 3;
     }
-    else {
-        ret = 2;
-    }
-    return ret;
+    return 2;
 }
 
 #[fastout]
@@ -25,8 +23,8 @@ fn main() {
         B: usize,
         C: usize,
     }
-    let ma = A.max(B.max(C));
-    let mi = A.min(B.min(C));
+    let ma = max(A, max(B, C));
+    let mi = min(A, min(B, C));
     let vec = vec![A, B, C];
     for i in 0..3 {
         println!("{}", rank(vec[i], ma, mi));

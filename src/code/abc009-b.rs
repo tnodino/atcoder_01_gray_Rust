@@ -12,6 +12,5 @@ fn main() {
     }
     A.sort_by(|a, b| b.cmp(a));
     A.dedup();
-
     println!("{}", A[1]);
 }

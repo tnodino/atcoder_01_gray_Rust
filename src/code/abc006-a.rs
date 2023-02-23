@@ -9,12 +9,8 @@ fn main() {
     input! {
         N: usize,
     }
-    let ans;
-    if N % 3 == 0 {
-        ans = "YES";
-    }
-    else {
-        ans = "NO";
-    }
-    println!("{}", ans);
+    println!("{}", match N % 3 {
+        0 => "YES",
+        _ => "NO",
+    });
 }

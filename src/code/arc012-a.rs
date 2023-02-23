@@ -9,7 +9,7 @@ fn main() {
     input! {
         day: String,
     }
-    let ans = match day.as_str() {
+    println!("{}" match day.as_str() {
         "Monday" => 5,
         "Tuesday" => 4,
         "Wednesday" => 3,
@@ -18,6 +18,5 @@ fn main() {
         "Saturday" => 0,
         "Sunday" => 0,
         _ => unreachable!()
-    };
-    println!("{}", ans);
+    });
 }
