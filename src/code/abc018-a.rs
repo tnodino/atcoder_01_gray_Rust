@@ -25,8 +25,8 @@ fn main() {
     }
     let ma = max(A, max(B, C));
     let mi = min(A, min(B, C));
-    let vec = vec![A, B, C];
+    let array = [A, B, C];
     for i in 0..3 {
-        println!("{}", rank(vec[i], ma, mi));
+        println!("{}", rank(array[i], ma, mi));
     }
 }

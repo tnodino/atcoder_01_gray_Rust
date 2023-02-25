@@ -1,4 +1,4 @@
-// https://atcoder.jp/contests/arc037/tasks/arc037_a
+// https://atcoder.jp/contests/abc026/tasks/abc026_a
 
 use proconio::input;
 use proconio::fastout;
@@ -8,12 +8,12 @@ use std::cmp::max;
 #[allow(non_snake_case)]
 fn main() {
     input! {
-        N: usize,
-        m: [isize; N],
+        A: usize,
     }
     let mut ans = 0;
-    for x in m {
-        ans += max(80 - x, 0);
+    for x in 1..A {
+        let y = A - x;
+        ans = max(ans, x * y);
     }
     println!("{}", ans);
 }

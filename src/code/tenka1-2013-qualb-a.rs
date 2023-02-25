@@ -6,7 +6,7 @@ use proconio::fastout;
 #[fastout]
 #[allow(non_snake_case)]
 fn main() {
-    let mut vec = [
+    let mut array = [
         "ABGGEGBCFEBFBAF",
         "FFGFACCCECDGCDGAFFFACGDA",
         "EEDCAEAFBDDEEDGGA",
@@ -23,6 +23,6 @@ fn main() {
         "FEEBFDGAADAE",
         "GB"
     ];
-    vec.sort();
-    println!("{}", vec[6]);
+    array.sort();
+    println!("{}", array[6]);
 }

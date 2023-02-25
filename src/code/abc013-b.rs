@@ -12,19 +12,19 @@ fn main() {
         b: isize,
     }
     let mut now = a as isize;
-    let mut Red = 0;
+    let mut red = 0;
     while now != b {
         now += 1;
         now %= 10;
-        Red += 1;
+        red += 1;
     }
     let mut now = a as isize;
-    let mut Blue = 0;
+    let mut blue = 0;
     while now != b {
         now -= 1;
         now += 10;
         now %= 10;
-        Blue += 1;
+        blue += 1;
     }
-    println!("{}", min(Red, Blue));
+    println!("{}", min(red, blue));
 }

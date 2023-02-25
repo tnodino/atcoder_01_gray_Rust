@@ -11,7 +11,7 @@ fn main() {
         b: usize,
         c: usize,
     }
-    let mut vec = vec![a, b, c];
-    vec.sort();
-    println!("{}", vec[1]);
+    let mut array = [a, b, c];
+    array.sort();
+    println!("{}", array[1]);
 }
