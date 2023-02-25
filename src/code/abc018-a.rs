@@ -5,16 +5,6 @@ use proconio::fastout;
 use std::cmp::max;
 use std::cmp::min;
 
-fn rank(x: usize, ma: usize, mi: usize) -> usize {
-    if x == ma {
-        return 1;
-    }
-    if x == mi {
-        return 3;
-    }
-    return 2;
-}
-
 #[fastout]
 #[allow(non_snake_case)]
 fn main() {
@@ -27,6 +17,14 @@ fn main() {
     let mi = min(A, min(B, C));
     let array = [A, B, C];
     for i in 0..3 {
-        println!("{}", rank(array[i], ma, mi));
+        if array[i] == ma {
+            println!("{}", 1);
+        }
+        else if array[i] == mi {
+            println!("{}", 3);
+        }
+        else {
+            println!("{}", 2);
+        }
     }
 }

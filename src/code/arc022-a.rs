@@ -10,7 +10,7 @@ fn main() {
         mut S: String,
     }
     S = S.to_lowercase();
-    let T = ['i', 'c', 't'];
+    let T = "ict".chars().collect::<Vec<char>>();
     let mut idx = 0;
     let mut ans = "NO";
     for s in S.chars() {

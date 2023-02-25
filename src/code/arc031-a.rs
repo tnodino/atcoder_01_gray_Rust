@@ -9,7 +9,7 @@ fn main() {
     input! {
         Name: String,
     }
-    let vec: Vec<char> = Name.chars().collect();
+    let vec = Name.chars().collect::<Vec<char>>();
     let mut rev_vec = vec.clone();
     rev_vec.reverse();
     if vec == rev_vec {

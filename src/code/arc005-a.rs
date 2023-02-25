@@ -8,17 +8,13 @@ use proconio::fastout;
 fn main() {
     input! {
         N: usize,
-        w: [String; N],
+        mut w: [String; N],
     }
-    let mut ans = 0;
-    let TA = "TAKAHASHIKUN";
-    let Ta = "Takahashikun";
     let ta = "takahashikun";
+    let mut ans = 0;
     for i in 0..N {
-        if w[i] == TA || w[i] == Ta || w[i] == ta {
-            ans += 1
-        }
-        if w[i] == TA.to_string() + "." || w[i] == Ta.to_string() + "." || w[i] == ta.to_string() + "." {
+        w[i] = w[i].to_lowercase();
+        if w[i] == ta || w[i] == format!("{}.", ta) {
             ans += 1
         }
     }
