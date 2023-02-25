@@ -10,15 +10,13 @@ fn main() {
         A: isize,
         B: isize,
     }
-    let ans;
     if A.abs() < B.abs() {
-        ans = "Ant";
+        println!("Ant");
     }
     else if A.abs() > B.abs() {
-        ans = "Bug";
+        println!("Bug");
     }
     else {
-        ans = "Draw";
+        println!("Draw");
     }
-    println!("{}", ans);
 }

@@ -20,5 +20,5 @@ fn main() {
             _ => s
         });
     }
-    println!("");
+    println!();
 }

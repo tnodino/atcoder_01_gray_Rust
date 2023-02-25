@@ -14,5 +14,5 @@ fn main() {
             print!("{}", s);
         }
     }
-    println!("");
+    println!();
 }

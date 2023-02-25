@@ -12,12 +12,10 @@ fn main() {
     let vec: Vec<char> = Name.chars().collect();
     let mut rev_vec = vec.clone();
     rev_vec.reverse();
-    let ans;
     if vec == rev_vec {
-        ans = "YES";
+        println!("YES");
     }
     else {
-        ans = "NO";
+        println!("NO");
     }
-    println!("{}", ans);
 }

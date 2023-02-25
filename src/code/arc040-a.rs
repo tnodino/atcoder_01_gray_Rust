@@ -25,12 +25,12 @@ fn main() {
         }
     }
     if red > blue {
-        println!("{}", "TAKAHASHI");
+        println!("TAKAHASHI");
     }
     else if red < blue {
-        println!("{}", "AOKI");
+        println!("AOKI");
     }
     else {
-        println!("{}", "DRAW");
+        println!("DRAW");
     }
 }
