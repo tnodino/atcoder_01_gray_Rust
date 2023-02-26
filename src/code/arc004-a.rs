@@ -10,7 +10,7 @@ fn main() {
     input! {
         N: usize,
     }
-    let mut Points = vec![];
+    let mut Points = Vec::new();
     for _ in 0..N {
         input! {
             x: f64,

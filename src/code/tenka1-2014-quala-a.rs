@@ -7,7 +7,7 @@ use proconio::fastout;
 #[allow(non_snake_case)]
 fn main() {
     let N = 1000;
-    let mut vec = vec![];
+    let mut vec = Vec::new();
     for i in 1..=N {
         vec.push(i.to_string());
     }

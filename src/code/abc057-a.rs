@@ -1,9 +1,7 @@
-// https://atcoder.jp/contests/abc041/tasks/abc041_b
+// https://atcoder.jp/contests/abc057/tasks/abc057_a
 
 use proconio::input;
 use proconio::fastout;
-
-const MOD: usize = 1_000_000_007;
 
 #[fastout]
 #[allow(non_snake_case)]
@@ -11,7 +9,6 @@ fn main() {
     input! {
         A: usize,
         B: usize,
-        C: usize,
     }
-    println!("{}", A * B % MOD * C % MOD);
+    println!("{}", (A + B) % 24);
 }

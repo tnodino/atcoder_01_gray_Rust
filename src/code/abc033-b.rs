@@ -10,7 +10,7 @@ fn main() {
         N: usize,
     }
     let mut cnt = 0;
-    let mut vec = vec![];
+    let mut vec = Vec::new();
     for _ in 0..N {
         input! {
             S: String,

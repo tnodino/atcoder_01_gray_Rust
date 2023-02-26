@@ -7,7 +7,7 @@ use proconio::is_stdin_empty;
 #[fastout]
 #[allow(non_snake_case)]
 fn main() {
-    let mut ans = vec![];
+    let mut ans = Vec::new();
     loop {
         if is_stdin_empty() {
             break;
