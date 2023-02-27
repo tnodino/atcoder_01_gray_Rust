@@ -9,11 +9,9 @@ fn main() {
     input! {
         n: usize,
     }
-    let mut DP = vec![0; 50];
-    DP[0] = 1;
-    DP[1] = 1;
+    let mut DP = vec![1, 1];
     for i in 2..=n {
-        DP[i] = DP[i-1] + DP[i-2];
+        DP.push(DP[i-1] + DP[i-2]);
     }
     println!("{}", DP[n]);
 }

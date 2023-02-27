@@ -9,16 +9,10 @@ fn main() {
     input! {
         N: usize,
     }
-    if N < 60 {
-        println!("Bad");
-    }
-    else if N < 90 {
-        println!("Good");
-    }
-    else if N < 100 {
-        println!("Great");
-    }
-    else {
-        println!("Perfect");
-    }
+    println!("{}", match N {
+        v if v < 60 => "Bad",
+        v if v < 90 => "Good",
+        v if v < 100 => "Great",
+        _ => "Perfect",
+    });
 }

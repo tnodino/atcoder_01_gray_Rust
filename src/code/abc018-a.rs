@@ -17,14 +17,10 @@ fn main() {
     let mi = min(A, min(B, C));
     let array = [A, B, C];
     for i in 0..3 {
-        if array[i] == ma {
-            println!("{}", 1);
-        }
-        else if array[i] == mi {
-            println!("{}", 3);
-        }
-        else {
-            println!("{}", 2);
-        }
+        println!("{}", match array[i] {
+            v if v == ma => 1,
+            v if v == mi => 3,
+            _ => 2,
+        });
     }
 }

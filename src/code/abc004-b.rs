@@ -9,7 +9,7 @@ fn main() {
     input! {
         c: [[String; 4]; 4],
     }
-    let mut ans = [[""; 4]; 4];
+    let mut ans = [["?"; 4]; 4];
     for i in 0..4 {
         for j in 0..4 {
             ans[i][j] = &c[3-i][3-j];

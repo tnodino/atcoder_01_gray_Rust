@@ -10,10 +10,10 @@ fn main() {
         n: usize,
         a: [usize; n],
     }
-    let flower = [0, 0, 1, 0, 1, 2, 3, 0, 1, 0];
+    let array = [0, 0, 1, 0, 1, 2, 3, 0, 1, 0];
     let mut ans = 0;
     for i in 0..n {
-        ans += flower[a[i]];
+        ans += array[a[i]];
     }
     println!("{}", ans);
 }
