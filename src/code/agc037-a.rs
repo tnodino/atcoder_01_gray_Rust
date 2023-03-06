@@ -4,7 +4,7 @@ use proconio::input;
 use proconio::fastout;
 
 #[allow(non_snake_case)]
-fn op(idx: usize, S: &Vec<char>) -> usize {
+fn op(idx: usize, S: &mut Vec<char>) -> usize {
     if idx == 0 {
         return 1;
     }
@@ -38,6 +38,6 @@ fn main() {
     input! {
         S: String,
     }
-    let S = S.chars().collect::<Vec<char>>();
-    println!("{}", op(S.len() - 1, &S));
+    let mut S = S.chars().collect::<Vec<char>>();
+    println!("{}", op(S.len() - 1, &mut S));
 }
