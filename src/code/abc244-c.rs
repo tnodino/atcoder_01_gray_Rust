@@ -4,7 +4,11 @@ use proconio::input;
 
 #[allow(non_snake_case)]
 fn main() {
+    let stdin = std::io::stdin();
+    let mut source = proconio::source::line::LineSource::new(stdin.lock());
+
     input! {
+        from &mut source,
         N: usize,
     }
     let mut flg = vec![true; N * 2 + 2];
@@ -16,6 +20,7 @@ fn main() {
         println!("{}", idx);
         flg[idx] = false;
         input! {
+            from &mut source,
             x: usize,
         }
         if x == 0 {
