@@ -1,7 +1,9 @@
-// https://atcoder.jp/contests/abc259/submissions/33129767
+// https://atcoder.jp/contests/abc259/tasks/abc259_b
 
 use proconio::input;
 use proconio::fastout;
+use libm::{hypot, atan2, cos, sin};
+use std::f64::consts::PI;
 
 #[fastout]
 #[allow(non_snake_case)]
@@ -11,16 +13,8 @@ fn main() {
         b: f64,
         d: f64,
     }
-    let d = d.to_radians();
-    let x = [[d.cos(), -d.sin()], [d.sin(), d.cos()]];
-    let y = [[a], [b]];
-    let mut ans = [[0.], [0.]];
-    for i in 0..2 {
-        for j in 0..2 {
-            for k in 0..1 {
-                ans[i][k] += x[i][j] * y[j][k];
-            }
-        }
-    }
-    println!("{} {}", ans[0][0], ans[1][0]);
+    let r = hypot(a, b);
+    let mut theta = atan2(b, a);
+    theta += d * PI / 180.;
+    println!("{} {}", cos(theta) * r, sin(theta) * r);
 }
