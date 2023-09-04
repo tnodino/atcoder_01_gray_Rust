@@ -10,7 +10,13 @@ fn main() {
     input! {
         N: usize,
     }
-    let A = (N / 10) * 100 + (N % 10) * 15;
-    let B = ((N + 9) / 10) * 100;
-    println!("{}", min(A, B));
+    let mut ans: usize = 1<<60;
+    for x in 0..=50 {
+        for y in 0..=5 {
+            if x + y * 10 >= N {
+                ans = min(ans, x * 15 + y * 100);
+            }
+        }
+    }
+    println!("{}", ans);
 }
