@@ -7,9 +7,8 @@ use proconio::fastout;
 #[allow(non_snake_case)]
 fn main() {
     input! {
-        a: usize,
-        b: usize,
+        (a, b): (usize, usize),
     }
-    let X = b - a;
-    println!("{}", X * (X + 1) / 2 - b);
+    let s = b - a;
+    println!("{}", (s + 1) * s / 2 - b);
 }

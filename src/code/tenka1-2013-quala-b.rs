@@ -12,11 +12,7 @@ fn main() {
     let mut ans = 0;
     for _ in 0..N {
         input! {
-            V: usize,
-            W: usize,
-            X: usize,
-            Y: usize,
-            Z: usize,
+            (V, W, X, Y, Z): (usize, usize, usize, usize, usize),
         }
         if V + W + X + Y + Z < 20 {
             ans += 1;

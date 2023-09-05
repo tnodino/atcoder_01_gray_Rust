@@ -10,5 +10,5 @@ fn main() {
         s: String,
         i: usize,
     }
-    println!("{}", s.chars().nth(i-1).unwrap());
+    println!("{}", &s[i-1..i]);
 }

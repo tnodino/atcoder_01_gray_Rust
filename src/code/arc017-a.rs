@@ -7,13 +7,13 @@ use proconio::fastout;
 #[allow(non_snake_case)]
 fn main() {
     input! {
-        N: usize
+        N: usize,
     }
-    let mut ans = "YES";
     for i in 2..N {
         if N % i == 0 {
-            ans = "NO";
+            println!("NO");
+            return;
         }
     }
-    println!("{}", ans);
+    println!("YES");
 }

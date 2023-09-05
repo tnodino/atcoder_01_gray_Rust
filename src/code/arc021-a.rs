@@ -6,19 +6,21 @@ use proconio::fastout;
 #[fastout]
 #[allow(non_snake_case)]
 fn main() {
+    let N = 4;
     input! {
-        A: [[usize; 4]; 4],
+        A: [[usize; N]; N],
     }
-    let mut ans = "GAMEOVER";
-    for i in 0..4 {
-        for j in 0..4 {
-            if i <= 2 && A[i][j] == A[i+1][j] {
-                ans = "CONTINUE";
+    for i in 0..N {
+        for j in 0..N {
+            if i + 1 < N && A[i][j] == A[i+1][j] {
+                println!("CONTINUE");
+                return;
             }
-            if j <= 2 && A[i][j] == A[i][j+1] {
-                ans = "CONTINUE";
+            if j + 1 < N && A[i][j] == A[i][j+1] {
+                println!("CONTINUE");
+                return;
             }
         }
     }
-    println!("{}", ans);
+    println!("GAMEOVER");
 }

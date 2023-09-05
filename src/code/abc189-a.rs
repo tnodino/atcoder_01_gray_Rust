@@ -7,14 +7,11 @@ use proconio::fastout;
 #[allow(non_snake_case)]
 fn main() {
     input! {
-        S: String,
+        C: String,
     }
-    let mut S = S.chars().collect::<Vec<char>>();
-    S.dedup();
-    if S.len() == 1 {
-        println!("Won");
-    }
-    else {
-        println!("Lost");
-    }
+    let C = C.chars().collect::<Vec<char>>();
+    println!("{}", match (C[0] == C[1], C[1] == C[2]) {
+        (true, true) => "Won",
+        (_, _) => "Lost",
+    })
 }

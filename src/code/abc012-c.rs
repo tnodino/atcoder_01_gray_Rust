@@ -9,10 +9,10 @@ fn main() {
     input! {
         N: usize,
     }
-    let M = 2025 - N;
+    let s = 2025 - N;
     for i in 1..=9 {
         for j in 1..=9 {
-            if i * j == M {
+            if i * j == s {
                 println!("{} x {}", i, j);
             }
         }

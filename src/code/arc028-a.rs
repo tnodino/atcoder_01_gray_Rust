@@ -7,23 +7,18 @@ use proconio::fastout;
 #[allow(non_snake_case)]
 fn main() {
     input! {
-        mut N: isize,
-        A: isize,
-        B: isize,
+        (mut N, A, B): (usize, usize, usize),
     }
-    let mut turn = 1;
-    while N > 0 {
-        turn ^= 1;
-        if turn == 0 {
-            N -= A;
+    loop {
+        if N <= A {
+            println!("Ant");
+            return;
         }
-        else {
-            N -= B;
+        N -= A;
+        if N <= B {
+            println!("Bug");
+            return;
         }
+        N -= B;
     }
-    println!("{}", match turn {
-        0 => "Ant",
-        1 => "Bug",
-        _ => unreachable!()
-    });
 }

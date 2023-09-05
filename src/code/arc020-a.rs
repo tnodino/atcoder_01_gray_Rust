@@ -7,8 +7,7 @@ use proconio::fastout;
 #[allow(non_snake_case)]
 fn main() {
     input! {
-        A: isize,
-        B: isize,
+        (A, B): (isize, isize),
     }
     if A.abs() < B.abs() {
         println!("Ant");
@@ -17,6 +16,6 @@ fn main() {
         println!("Bug");
     }
     else {
-        println!("Draw");
+        println!("Draw")
     }
 }

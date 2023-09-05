@@ -17,18 +17,20 @@ fn main() {
     input! {
         N: usize,
     }
-    let mut vec = Vec::new();
+    let mut x = Vec::new();
+    let mut y = Vec::new();
     for _ in 0..N {
         input! {
-            x: f64,
-            y: f64,
+            (i1, i2): (f64, f64),
         }
-        vec.push((x, y));
+        x.push(i1);
+        y.push(i2);
     }
     let mut ans = 0.;
     for i in 0..N {
         for j in i+1..N {
-            ans = max(ans, hypot((vec[i].0 - vec[j].0).abs(), (vec[i].1 - vec[j].1).abs()));
+            let dist = hypot((x[i] - x[j]).abs(), (y[i] - y[j]).abs());
+            ans = max(ans, dist);
         }
     }
     println!("{}", ans);

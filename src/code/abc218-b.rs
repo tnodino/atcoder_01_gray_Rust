@@ -6,12 +6,13 @@ use proconio::fastout;
 #[fastout]
 #[allow(non_snake_case)]
 fn main() {
+    let N = 26;
     input! {
-        P: [usize; 26],
+        P: [u8; N],
     }
-    let mut alp = ['?'; 26];
-    for i in 0..26 {
-        alp[i] = (P[i] as u8 + 96) as char;
+    let mut ans = vec!['?'; N];
+    for i in 0..N {
+        ans[i] = ((P[i] - 1) + ('a' as u8)) as char;
     }
-    println!("{}", alp.iter().map(|x| x.to_string()).collect::<String>());
+    println!("{}", ans.iter().collect::<String>());
 }
