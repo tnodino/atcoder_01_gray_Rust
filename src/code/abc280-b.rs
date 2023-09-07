@@ -12,8 +12,10 @@ fn main() {
     }
     let mut A = vec![0; N];
     A[0] = S[0];
+    let mut sum = S[0];
     for i in 1..N {
-        A[i] = S[i] - S[i-1];
+        A[i] = S[i] - sum;
+        sum += A[i];
     }
     println!("{}", A.iter().map(|&x| x.to_string()).collect::<Vec<String>>().join(" "));
 }

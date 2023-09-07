@@ -12,7 +12,7 @@ fn main() {
         vec.push(i.to_string());
     }
     vec.sort();
-    for v in vec {
-        println!("{}", v);
+    for i in 0..N {
+        println!("{}", vec[i]);
     }
 }

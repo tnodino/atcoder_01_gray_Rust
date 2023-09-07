@@ -12,8 +12,8 @@ fn main() {
         a: [usize; N],
     }
     let mut ans = 0;
-    for v in a {
-        ans = gcd(ans, v);
+    for i in 0..N {
+        ans = gcd(ans, a[i]);
     }
     println!("{}", ans);
 }

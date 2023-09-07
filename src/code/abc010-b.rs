@@ -10,10 +10,21 @@ fn main() {
         n: usize,
         a: [usize; n],
     }
-    let array = [0, 0, 1, 0, 1, 2, 3, 0, 1, 0];
+    let m = 10;
+    let mut flg = vec![false; m];
+    for i in 1..m {
+        if i % 2 != 0 && i % 3 != 2 {
+            flg[i] = true;
+        }
+    }
     let mut ans = 0;
     for i in 0..n {
-        ans += array[a[i]];
+        for j in (1..=a[i]).rev() {
+            if flg[j] {
+                ans += a[i] - j;
+                break;
+            }
+        }
     }
     println!("{}", ans);
 }

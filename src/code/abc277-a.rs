@@ -7,14 +7,8 @@ use proconio::fastout;
 #[allow(non_snake_case)]
 fn main() {
     input! {
-        N: usize,
-        X: usize,
+        (N, X): (usize, usize),
         P: [usize; N],
     }
-    for i in 0..N {
-        if P[i] == X {
-            println!("{}", i + 1);
-            return;
-        }
-    }
+    println!("{}", P.iter().position(|&x| x == X).unwrap() + 1);
 }

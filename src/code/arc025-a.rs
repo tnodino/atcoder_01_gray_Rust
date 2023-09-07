@@ -7,12 +7,13 @@ use std::cmp::max;
 #[fastout]
 #[allow(non_snake_case)]
 fn main() {
+    let N = 7;
     input! {
-        D: [usize; 7],
-        J: [usize; 7],
+        D: [usize; N],
+        J: [usize; N],
     }
     let mut ans = 0;
-    for i in 0..7 {
+    for i in 0..N {
         ans += max(D[i], J[i]);
     }
     println!("{}", ans);

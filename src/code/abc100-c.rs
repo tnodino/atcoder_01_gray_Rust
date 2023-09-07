@@ -13,8 +13,8 @@ fn main() {
     let mut ans = 0;
     for i in 0..N {
         while a[i] % 2 == 0 {
-            ans += 1;
             a[i] /= 2;
+            ans += 1;
         }
     }
     println!("{}", ans);

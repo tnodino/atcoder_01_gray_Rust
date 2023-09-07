@@ -9,11 +9,17 @@ fn main() {
     input! {
         S: String,
     }
-    for s in S.chars() {
-        if S.chars().filter(|&x| x == s).count() == 1 {
-            println!("{}", s);
-            return;
-        }
+    let S = S.chars().collect::<Vec<char>>();
+    if S[0] != S[1] && S[0] != S[2] {
+        println!("{}", S[0]);
     }
-    println!("-1");
+    else if S[1] != S[0] && S[1] != S[2] {
+        println!("{}", S[1]);
+    }
+    else if S[2] != S[0] && S[2] != S[1] {
+        println!("{}", S[2]);
+    }
+    else {
+        println!("-1");
+    }
 }

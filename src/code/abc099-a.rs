@@ -9,10 +9,8 @@ fn main() {
     input! {
         N: usize,
     }
-    if (N - 1) / 999 == 0 {
-        println!("ABC");
-    }
-    else {
-        println!("ABD");
-    }
+    println!("{}", match N <= 999 {
+        true => "ABC",
+        false => "ABD",
+    });
 }

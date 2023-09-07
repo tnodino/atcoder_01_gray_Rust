@@ -10,12 +10,10 @@ fn main() {
         S1: String,
         S2: String,
     }
-    let S1 = S1.chars().collect::<Vec<char>>();
-    let S2 = S2.chars().collect::<Vec<char>>();
-    if S1[0] == '#' && S1[1] == '.' && S2[0] == '.' && S2[1] == '#' {
+    if S1 == ".#" && S2 == "#." {
         println!("No");
     }
-    else if S1[0] == '.' && S1[1] == '#' && S2[0] == '#' && S2[1] == '.' {
+    else if S1 == "#." && S2 == ".#" {
         println!("No");
     }
     else {

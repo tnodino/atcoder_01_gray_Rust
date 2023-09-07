@@ -9,13 +9,8 @@ fn main() {
     input! {
         Name: String,
     }
-    let vec = Name.chars().collect::<Vec<char>>();
-    let mut rev_vec = vec.clone();
-    rev_vec.reverse();
-    if vec == rev_vec {
-        println!("YES");
-    }
-    else {
-        println!("NO");
-    }
+    println!("{}", match Name == Name.chars().rev().collect::<String>() {
+        true => "YES",
+        false => "NO",
+    });
 }

@@ -7,9 +7,13 @@ use proconio::fastout;
 #[allow(non_snake_case)]
 fn main() {
     input! {
-        mut S: String,
+        S: String,
     }
-    S = S.to_lowercase();
-    let F = S.chars().nth(0).unwrap().to_uppercase();
-    println!("{}{}", F, &S[1..]);
+    let N = S.len();
+    let mut S = S.chars().collect::<Vec<char>>();
+    S[0] = S[0].to_uppercase().next().unwrap();
+    for i in 1..N {
+        S[i] = S[i].to_lowercase().next().unwrap();
+    }
+    println!("{}", S.iter().collect::<String>());
 }

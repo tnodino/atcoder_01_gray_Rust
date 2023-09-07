@@ -9,9 +9,9 @@ fn main() {
     input! {
         mut W: String,
     }
-    let vowel = "aiueo".to_string();
-    for v in vowel.chars() {
-        W = W.replace(v, "");
+    let C = "aiueo".chars().collect::<Vec<char>>();
+    for c in C.iter() {
+        W = W.replace(*c, "");
     }
     println!("{}", W);
 }

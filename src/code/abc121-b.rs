@@ -7,9 +7,7 @@ use proconio::fastout;
 #[allow(non_snake_case)]
 fn main() {
     input! {
-        N: usize,
-        M: usize,
-        C: isize,
+        (N, M, C): (usize, usize, isize),
         B: [isize; M],
     }
     let mut ans = 0;
@@ -17,11 +15,11 @@ fn main() {
         input! {
             A: [isize; M],
         }
-        let mut cnt = C;
+        let mut res = C;
         for i in 0..M {
-            cnt += A[i] * B[i];
+            res += A[i] * B[i];
         }
-        if cnt > 0 {
+        if res > 0 {
             ans += 1;
         }
     }

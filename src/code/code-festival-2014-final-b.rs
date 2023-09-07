@@ -10,15 +10,12 @@ fn main() {
         S: String,
     }
     let mut ans = 0;
-    let mut flg = 0;
-    for s in S.chars() {
-        if flg == 0 {
-            ans += s as isize - 48;
+    for (i, s) in S.chars().enumerate() {
+        let x = (s as isize) - ('0' as isize);
+        ans += match i % 2 == 0 {
+            true => x,
+            false => -x,
         }
-        else {
-            ans -= s as isize - 48;
-        }
-        flg ^= 1;
     }
     println!("{}", ans);
 }
