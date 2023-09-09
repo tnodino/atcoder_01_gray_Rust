@@ -7,26 +7,20 @@ use proconio::fastout;
 #[allow(non_snake_case)]
 fn main() {
     input! {
-        a: usize,
-        b: usize,
+        (a, b): (usize, usize),
         p: [usize; a],
         q: [usize; b],
     }
-    let mut st = vec!["x"; 10];
-    for x in 0..10 {
-        for i in 0..a {
-            if x == p[i] {
-                st[x] = ".";
-            }
-        }
-        for i in 0..b {
-            if x == q[i] {
-                st[x] = "o";
-            }
-        }
+    let N = 10;
+    let mut flg = vec!['x'; 10];
+    for i in 0..a {
+        flg[(p[i] + N - 1) % N] = '.';
     }
-    println!("{} {} {} {}", st[7], st[8], st[9], st[0]);
-    println!(" {} {} {}", st[4], st[5], st[6]);
-    println!("  {} {}", st[2], st[3]);
-    println!("   {}", st[1]);
+    for i in 0..b {
+        flg[(q[i] + N - 1) % N] = 'o';
+    }
+    println!("{} {} {} {}", flg[6], flg[7], flg[8], flg[9]);
+    println!(" {} {} {}", flg[3], flg[4], flg[5]);
+    println!("  {} {}", flg[1], flg[2]);
+    println!("   {}", flg[0]);
 }

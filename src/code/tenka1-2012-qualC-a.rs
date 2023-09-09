@@ -9,18 +9,14 @@ fn main() {
     input! {
         n: usize,
     }
-    let mut ans = 0;
-    for i in 2..n {
-        let mut flg = true;
-        for j in 2..i {
-            if i % j == 0 {
-                flg = false;
-                break;
+    let mut vec = Vec::new();
+    'outer: for i in 2..n {
+        for j in 0..vec.len() {
+            if i % vec[j] == 0 {
+                continue 'outer;
             }
         }
-        if flg {
-            ans += 1;
-        }
+        vec.push(i);
     }
-    println!("{}", ans);
+    println!("{}", vec.len());
 }

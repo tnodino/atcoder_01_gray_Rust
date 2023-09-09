@@ -7,16 +7,15 @@ use proconio::fastout;
 #[allow(non_snake_case)]
 fn main() {
     input! {
-        N: usize,
-        K: usize,
+        (N, K): (usize, usize),
     }
-    let mut cnt = 0;
+    let mut sum = 0;
     for i in 1..=N {
         input! {
             a: usize,
         }
-        cnt += a;
-        if cnt >= K {
+        sum += a;
+        if sum >= K {
             println!("{}", i);
             return;
         }

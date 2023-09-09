@@ -7,15 +7,14 @@ use proconio::fastout;
 #[allow(non_snake_case)]
 fn main() {
     input! {
-        N: isize,
-        L: isize,
+        (N, L): (isize, isize),
     }
-    let sum = (L..L+N).sum::<isize>();
-    let mut mi: isize = -999;
-    for i in L..L+N {
-        if i.abs() < mi.abs() {
-            mi = i;
-        }
+    let mut vec = Vec::new();
+    let mut sum = 0;
+    for i in 0..N {
+        vec.push(((L + i).abs(), L + i));
+        sum += L + i;
     }
-    println!("{}", sum - mi);
+    vec.sort();
+    println!("{:?}", sum - vec[0].1);
 }

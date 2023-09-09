@@ -17,11 +17,9 @@ fn main() {
         }
         let mut S = S.chars().collect::<Vec<char>>();
         S.sort();
-        if S == T {
-            println!("YES");
-        }
-        else {
-            println!("NO");
-        }
+        println!("{}", match S == T {
+            true => "YES",
+            false => "NO",
+        })
     }
 }

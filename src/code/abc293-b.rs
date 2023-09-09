@@ -10,19 +10,14 @@ fn main() {
         N: usize,
         A: [usize; N],
     }
-    let mut flg = vec![true; N];
-    for i in 0..N {
-        if !flg[i] {
-            continue;
-        }
-        flg[A[i]-1] = false;
-    }
-    let K = flg.iter().filter(|&x| *x).count();
-    let mut X = Vec::new();
+    let mut flg = vec![false; N];
     for i in 0..N {
         if flg[i] {
-            X.push(i+1);
+            continue;
         }
+        flg[A[i]-1] = true;
     }
-    println!("{}\n{}", K, X.iter().map(|&x| x.to_string()).collect::<Vec<String>>().join(" "));
+    let vec = flg.iter().enumerate().filter(|&(_, x)| !*x).map(|(i, _)| i+1).collect::<Vec<usize>>();
+    println!("{}", vec.len());
+    println!("{}", vec.iter().map(|&x| x.to_string()).collect::<Vec<String>>().join(" "));
 }

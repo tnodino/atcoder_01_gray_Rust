@@ -8,8 +8,7 @@ use std::f64::consts::PI;
 #[allow(non_snake_case)]
 fn main() {
     input! {
-        R: f64,
-        D: f64,
+        (R, D): (f64, f64),
     }
-    println!("{}", 2. * PI * PI * R * R * D);
+    println!("{}", R * R * PI * D * 2. * PI);
 }
