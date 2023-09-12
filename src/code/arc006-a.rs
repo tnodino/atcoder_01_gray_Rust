@@ -6,27 +6,28 @@ use proconio::fastout;
 #[fastout]
 #[allow(non_snake_case)]
 fn main() {
+    let N = 6;
     input! {
-        E: [usize; 6],
+        E: [usize; N],
         B: usize,
-        L: [usize; 6],
+        L: [usize; N],
     }
-    let mut hit = 0;
-    let mut bonus = false;
-    for i in 0..6 {
-        if L.contains(&E[i]) {
-            hit += 1;
+    let mut flg = vec![false; 10];
+    for i in 0..N {
+        flg[E[i]] = true;
+    }
+    let mut cnt = 0;
+    for i in 0..N {
+        if flg[L[i]] {
+            cnt += 1;
         }
     }
-    if L.contains(&B) {
-        bonus = true;
-    }
-    println!("{}", match hit {
-        6 => 1,
-        5 if bonus => 2,
-        5 => 3,
-        4 => 4,
-        3 => 5,
-        _ => 0
+    println!("{}", match (cnt, L.contains(&B)) {
+        (6, _) => 1,
+        (5, true) => 2,
+        (5, _) => 3,
+        (4, _) => 4,
+        (3, _) => 5,
+        (_, _) => 0,
     });
 }

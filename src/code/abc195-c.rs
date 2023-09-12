@@ -2,19 +2,28 @@
 
 use proconio::input;
 use proconio::fastout;
-use std::cmp::max;
 
 #[fastout]
 #[allow(non_snake_case)]
 fn main() {
     input! {
-        N: isize,
+        N: usize,
     }
     let mut ans = 0;
-    ans += max(0, N - 999);
-    ans += max(0, N - 999_999);
-    ans += max(0, N - 999_999_999);
-    ans += max(0, N - 999_999_999_999);
-    ans += max(0, N - 999_999_999_999_999);
+    if N >= 1_000 {
+        ans += N - 999;
+    }
+    if N >= 1_000_000 {
+        ans += N - 999_999;
+    }
+    if N >= 1_000_000_000 {
+        ans += N - 999_999_999;
+    }
+    if N >= 1_000_000_000_000 {
+        ans += N - 999_999_999_999;
+    }
+    if N >= 1_000_000_000_000_000 {
+        ans += N - 999_999_999_999_999;
+    }
     println!("{}", ans);
 }

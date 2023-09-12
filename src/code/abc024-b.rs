@@ -7,24 +7,14 @@ use proconio::fastout;
 #[allow(non_snake_case)]
 fn main() {
     input! {
-        N: usize,
-        T: usize,
+        (N, T): (usize, usize),
+        A: [usize; N],
     }
-    input! {
-        mut now: usize,
-    }
-    let mut ans = T;
-    for _ in 0..N-1 {
-        input! {
-            A: usize,
+    let mut ans = T * N;
+    for i in 1..N {
+        if A[i] < A[i-1] + T {
+            ans -= T - (A[i] - A[i-1]);
         }
-        if A - now < T {
-            ans += A - now;
-        }
-        else {
-            ans += T
-        }
-        now = A;
     }
     println!("{}", ans);
 }

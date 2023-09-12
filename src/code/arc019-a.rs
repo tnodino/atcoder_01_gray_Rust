@@ -9,16 +9,18 @@ fn main() {
     input! {
         S: String,
     }
-    for s in S.chars() {
-        print!("{}", match s {
+    let N = S.len();
+    let mut S = S.chars().collect::<Vec<char>>();
+    for i in 0..N {
+        S[i] = match S[i] {
             'O' => '0',
             'D' => '0',
             'I' => '1',
             'Z' => '2',
             'S' => '5',
             'B' => '8',
-            _ => s
-        });
+            _ => S[i],
+        }
     }
-    println!();
+    println!("{}", S.iter().collect::<String>());
 }

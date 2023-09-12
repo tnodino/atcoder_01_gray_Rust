@@ -9,22 +9,19 @@ fn main() {
     input! {
         S: String,
     }
+    let N = S.len();
     let S = S.chars().collect::<Vec<char>>();
-    let mut N = S.len();
-    N -= 2;
-    loop {
-        let mut flg = true;
-        let M = N / 2;
-        for i in 0..M {
-            if S[i] != S[i+M] {
-                flg = false;
-                break;
+    'outer: for i in 1..=N {
+        if (N - i) % 2 == 1 {
+            continue;
+        }
+        let n = (N - i) / 2;
+        for j in 0..n {
+            if S[j] != S[j+n] {
+                continue 'outer;
             }
         }
-        if flg {
-            break;
-        }
-        N -= 2;
+        println!("{}", N - i);
+        return;
     }
-    println!("{}", N);
 }

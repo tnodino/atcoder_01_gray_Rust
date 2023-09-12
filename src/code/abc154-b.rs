@@ -9,5 +9,6 @@ fn main() {
     input! {
         S: String,
     }
-    println!("{}", "x".repeat(S.len()));
+    let N = S.len();
+    println!("{}", "x".repeat(N));
 }

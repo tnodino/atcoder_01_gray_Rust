@@ -7,11 +7,10 @@ use proconio::fastout;
 #[allow(non_snake_case)]
 fn main() {
     input! {
-        a: usize,
-        b: usize,
-        c: usize,
+        (a, b, c): (usize, usize, usize),
     }
-    for i in 1..=127 {
+    let N = 127;
+    for i in 1..=N {
         if i % 3 == a && i % 5 == b && i % 7 == c {
             println!("{}", i);
         }

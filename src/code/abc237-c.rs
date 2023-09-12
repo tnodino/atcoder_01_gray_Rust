@@ -9,24 +9,32 @@ fn main() {
     input! {
         S: String,
     }
-    let mut N = S.len();
-    let mut S = S.chars().collect::<Vec<char>>();
-    S.reverse();
-    let mut idx = 0;
-    while idx < N / 2 {
-        if S[idx] != S[N-idx-1] {
-            if S[idx] == 'a' {
-                N += 1;
-                S.push('a');
-            }
-            else {
-                println!("No");
-                return;
-            }
+    let N = S.len();
+    let mut S = S.chars().rev().collect::<Vec<char>>();
+    let mut cntl = 0;
+    for i in 0..N {
+        if S[i] != 'a' {
+            break;
         }
-        else {
-            idx += 1;
-        }
+        cntl += 1;
     }
-    println!("Yes");
+    let mut cntr = 0;
+    for i in (0..N).rev() {
+        if S[i] != 'a' {
+            break;
+        }
+        cntr += 1;
+    }
+    if cntl < cntr {
+        println!("No");
+        return;
+    }
+    for _ in 0..cntl-cntr {
+        S.push('a');
+    }
+    let T = S.clone().into_iter().rev().collect::<Vec<char>>();
+    println!("{}", match S == T {
+        true => "Yes",
+        false => "No",
+    });
 }

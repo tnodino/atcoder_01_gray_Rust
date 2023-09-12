@@ -6,8 +6,9 @@ use proconio::fastout;
 #[fastout]
 #[allow(non_snake_case)]
 fn main() {
+    let N = 12;
     let mut ans = 0;
-    for _ in 0..12 {
+    for _ in 0..N {
         input! {
             S: String,
         }

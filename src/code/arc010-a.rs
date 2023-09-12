@@ -7,23 +7,20 @@ use proconio::fastout;
 #[allow(non_snake_case)]
 fn main() {
     input! {
-        mut N: isize,
-        M: usize,
-        A: isize,
-        B: isize,
+        (mut N, M, A, B): (usize, usize, usize, usize),
     }
     for i in 1..=M {
         if N <= A {
             N += B;
         }
         input! {
-            c: isize,
+            c: usize,
         }
-        N -= c;
-        if N < 0 {
+        if N < c {
             println!("{}", i);
             return;
         }
+        N -= c;
     }
     println!("complete");
 }

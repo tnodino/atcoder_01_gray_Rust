@@ -12,5 +12,5 @@ fn main() {
     println!("{}", match A.as_str() {
         "a" => "-1",
         _ => "a",
-    });
+    })
 }

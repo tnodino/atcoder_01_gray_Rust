@@ -9,15 +9,16 @@ fn main() {
     input! {
         Y: usize,
     }
-    let mut ans = "NO";
-    if Y % 4 == 0 {
-        ans = "YES";
-    }
-    if Y % 100 == 0 {
-        ans = "NO";
-    }
     if Y % 400 == 0 {
-        ans = "YES";
+        println!("YES");
     }
-    println!("{}", ans);
+    else if Y % 100 == 0 {
+        println!("NO");
+    }
+    else if Y % 4 == 0 {
+        println!("YES");
+    }
+    else {
+        println!("NO");
+    }
 }

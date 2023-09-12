@@ -7,16 +7,13 @@ use proconio::fastout;
 #[allow(non_snake_case)]
 fn main() {
     input! {
-        N: usize,
-        K: usize,
+        (N, K): (usize, usize),
         A: [usize; N],
     }
     for i in K..N {
-        if A[i-K] < A[i] {
-            println!("Yes");
-        }
-        else {
-            println!("No");
-        }
+        println!("{}", match A[i] > A[i-K] {
+            true => "Yes",
+            false => "No",
+        });
     }
 }

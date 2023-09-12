@@ -2,31 +2,27 @@
 
 use proconio::input;
 use proconio::fastout;
+use std::cmp::min;
 
 #[fastout]
 #[allow(non_snake_case)]
 fn main() {
     input! {
-        N: usize,
-        mut K: usize,
-        X: usize,
+        (N, mut K, X): (usize, usize, usize),
         mut A: [usize; N],
     }
     for i in 0..N {
-        if A[i] / X >= K {
+        let d = A[i] / X;
+        if K <= d {
             A[i] -= X * K;
             K = 0;
             break;
         }
-        K -= A[i] / X;
-        A[i] -= A[i] / X * X;
+        A[i] -= d * X;
+        K -= d;
     }
-    A.sort_by(|a, b| b.cmp(a));
-    for i in 0..N {
-        if K == 0 {
-            break;
-        }
-        K -= 1;
+    A.sort_by(|a, b| b.cmp(&a));
+    for i in 0..min(N, K) {
         A[i] = 0;
     }
     println!("{}", A.iter().sum::<usize>());

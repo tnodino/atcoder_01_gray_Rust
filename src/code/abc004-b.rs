@@ -6,16 +6,17 @@ use proconio::fastout;
 #[fastout]
 #[allow(non_snake_case)]
 fn main() {
+    let N = 4;
     input! {
-        c: [[String; 4]; 4],
+        c: [[char; N]; N],
     }
-    let mut ans = [["?"; 4]; 4];
-    for i in 0..4 {
-        for j in 0..4 {
-            ans[i][j] = &c[3-i][3-j];
+    let mut ans = vec![vec!['?'; N]; N];
+    for i in 0..N {
+        for j in 0..N {
+            ans[N-i-1][N-j-1] = c[i][j];
         }
     }
-    for i in 0..4 {
-        println!("{}", ans[i].join(" "));
+    for i in 0..N {
+        println!("{}", ans[i].iter().map(|&x| x.to_string()).collect::<Vec<String>>().join(" "));
     }
 }
