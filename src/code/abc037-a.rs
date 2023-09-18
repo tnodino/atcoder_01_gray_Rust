@@ -8,10 +8,7 @@ use std::cmp::min;
 #[allow(non_snake_case)]
 fn main() {
     input! {
-        A: usize,
-        B: usize,
-        C: usize,
+        (A, B, C): (usize, usize, usize),
     }
-    let mi = min(A, B);
-    println!("{}", C / mi);
+    println!("{}", C / min(A, B));
 }

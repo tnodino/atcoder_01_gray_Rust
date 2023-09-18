@@ -9,17 +9,12 @@ fn main() {
     input! {
         W: usize,
     }
-    let S = "DiscoPresentsDiscoveryChannelProgrammingContest2016".to_string();
-    let mut cnt = 0;
-    for s in S.chars() {
-        print!("{}", s);
-        cnt += 1;
-        if cnt == W {
+    let S = "0DiscoPresentsDiscoveryChannelProgrammingContest2016".chars().collect::<Vec<char>>();
+    let N = S.len();
+    for i in 1..N {
+        print!("{}", S[i]);
+        if i % W == 0 || i + 1 == N {
             println!();
-            cnt = 0;
         }
-    }
-    if cnt != 0 {
-        println!();
     }
 }

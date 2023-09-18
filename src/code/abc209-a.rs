@@ -8,8 +8,7 @@ use std::cmp::max;
 #[allow(non_snake_case)]
 fn main() {
     input! {
-        A: isize,
-        B: isize,
+        (A, B): (isize, isize),
     }
     println!("{}", max(0, B - A + 1));
 }

@@ -9,8 +9,15 @@ fn main() {
     input! {
         N: usize,
     }
-    for _ in 0..(N-1)/9+1 {
-        print!("{}", (N - 1) % 9 + 1);
+    let M = 1_000_000;
+    let mut vec = Vec::new();
+    for i in 1..10 {
+        let mut x = i;
+        while x < M {
+            vec.push(x);
+            x = x * 10 + i;
+        }
     }
-    println!();
+    vec.sort();
+    println!("{}", vec[N-1]);
 }

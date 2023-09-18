@@ -7,25 +7,7 @@ use proconio::fastout;
 #[allow(non_snake_case)]
 fn main() {
     input! {
-        S: String,
-        A: usize,
-        B: usize,
-        C: usize,
-        D: usize,
+        (S, A, B, C, D): (String, usize, usize, usize, usize),
     }
-    let array = [A, B, C, D];
-    let mut idx = 0;
-    let mut i = 0;
-    for s in S.chars() {
-        if idx < 4 && array[idx] == i {
-            print!("\"");
-            idx += 1;
-        }
-        print!("{}", s);
-        i += 1;
-    }
-    if idx == 3 {
-        print!("\"");
-    }
-    println!("");
+    println!("{}\"{}\"{}\"{}\"{}", &S[..A], &S[A..B], &S[B..C], &S[C..D], &S[D..]);
 }

@@ -3,13 +3,13 @@
 use proconio::input;
 use proconio::fastout;
 
-fn base_change(mut x: usize, base: usize) -> usize {
+fn f(mut x: usize, k: usize) -> usize {
     let mut ret = 0;
-    let mut d = 1;
+    let mut p = 1;
     while x > 0 {
-        ret += x % 10 * d;
+        ret += x % 10 * p;
         x /= 10;
-        d *= base;
+        p *= k;
     }
     return ret;
 }
@@ -18,9 +18,7 @@ fn base_change(mut x: usize, base: usize) -> usize {
 #[allow(non_snake_case)]
 fn main() {
     input! {
-        K: usize,
-        A: usize,
-        B: usize,
+        (K, A, B): (usize, usize, usize),
     }
-    println!("{}", base_change(A, K) * base_change(B, K));
+    println!("{}", f(A, K) * f(B, K));
 }
