@@ -8,8 +8,7 @@ use std::cmp::min;
 #[allow(non_snake_case)]
 fn main() {
     input! {
-        n: usize,
-        x: usize,
+        (n, x): (usize, usize),
     }
-    println!("{}", min(x - 1, n - x));
+    println!("{}", min(n - x, x - 1));
 }

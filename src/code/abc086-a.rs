@@ -7,11 +7,11 @@ use proconio::fastout;
 #[allow(non_snake_case)]
 fn main() {
     input! {
-        a: usize,
-        b: usize,
+        (a, b): (usize, usize),
     }
-    println!("{}", match a * b % 2 {
+    println!("{}", match (a * b) % 2 {
+        0 => "Even",
         1 => "Odd",
-        _ => "Even",
+        _ => unreachable!(),
     });
 }

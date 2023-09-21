@@ -10,7 +10,7 @@ fn main() {
         N: usize,
         mut A: [usize; N],
     }
-    A.sort_by(|a, b| b.cmp(a));
+    A.sort_by(|a, b| b.cmp(&a));
     A.dedup();
     println!("{}", A[1]);
 }
